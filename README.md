@@ -1,12 +1,24 @@
-# EAD-Authuser
+# Plataforma EAD - Microservices Architecture
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
-Esta é uma aplicação que utiliza do modelo arquitetural de microservices e de uma APIRestful (De acordo com o Modelo de maturidade de Richardson) para realizar a comunicação entre os microservices.
 
-This is an application that uses the microservices architectural model and a Restful API (According to the Richardson Maturity Model) to carry out communication between microservices.
+Este projeto é uma plataforma de Ensino a Distância (EAD) desenvolvida utilizando o modelo arquitetural de microservices. A aplicação está estruturada em diferentes serviços, cada um com responsabilidades específicas, garantindo escalabilidade e manutenção simplificadas.
+
+Serviços Disponíveis
+Atualmente, a plataforma conta com o microservice Authuser, responsável pelo gerenciamento de cadastro de usuários. Este serviço utiliza duas APIs distintas:
+
+API REST: Focada no cadastro de novos usuários na plataforma, permitindo a criação de contas de forma rápida e eficiente.
+
+API RESTful (Modelo de Maturidade de Richardson): Utilizada para a comunicação entre microservices, garantindo uma integração robusta e padronizada entre os diferentes componentes do sistema.
+
+O que a plataforma proporciona?
+
+A plataforma EAD visa oferecer uma experiência de aprendizado online integrada e segura. Com o Authuser, os usuários podem se cadastrar e autenticar na plataforma, garantindo o acesso aos serviços educacionais disponíveis. A arquitetura baseada em microservices permite que a plataforma seja facilmente escalável e adaptável a novas funcionalidades e módulos no futuro.
+
+
 
 ## Table of Contents
 
