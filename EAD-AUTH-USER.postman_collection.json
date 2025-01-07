@@ -4,7 +4,7 @@
 		"name": "EAD-AUTH-USER",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "30344579",
-		"_collection_link": "https://i-dont-know-4771.postman.co/workspace/ead6ce3f-7503-4034-bee3-a54aeded82be/collection/30344579-b9edb26f-c0d6-4d99-ab74-7444cf88346e?action=share&source=collection_link&creator=30344579"
+		"_collection_link": "https://i-dont-know-4771.postman.co/workspace/Decoder--EAD~ead6ce3f-7503-4034-bee3-a54aeded82be/collection/30344579-b9edb26f-c0d6-4d99-ab74-7444cf88346e?action=share&source=collection_link&creator=30344579"
 	},
 	"item": [
 		{
@@ -57,7 +57,7 @@
 			"name": "USER",
 			"item": [
 				{
-					"name": "GET ALL USERS",
+					"name": "Find All Paged",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -126,7 +126,7 @@
 					"response": []
 				},
 				{
-					"name": "GET ONE USER",
+					"name": "Find By Id",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -138,19 +138,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE USER",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "http://localhost:8087/users/8380b83a-f08f-4977-adf1-650b7682fed8"
-					},
-					"response": []
-				},
-				{
-					"name": "UPDATE USER",
+					"name": "Update User",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -172,7 +160,7 @@
 					"response": []
 				},
 				{
-					"name": "PUT PASSWORD",
+					"name": "Update Password",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -194,7 +182,7 @@
 					"response": []
 				},
 				{
-					"name": "PUT IMAGE",
+					"name": "Update Image",
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -212,6 +200,18 @@
 							"raw": "{\r\n    \"imageUrl\" : \"www.img.com\"\r\n}"
 						},
 						"url": "http://localhost:8087/users/199541a4-d03b-4b2d-b689-837402e9df37/image"
+					},
+					"response": []
+				},
+				{
+					"name": "By Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8087/users/8380b83a-f08f-4977-adf1-650b7682fed8"
 					},
 					"response": []
 				}
