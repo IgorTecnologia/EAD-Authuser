@@ -17,6 +17,7 @@ import lombok.Data;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.UUID;
 
 @Data
@@ -99,5 +100,19 @@ public class UserDTO extends RepresentationModel<UserDTO> {
         imageUrl = entity.getImageUrl();
         creationDate = entity.getCreationDate();
         lastUpdateDate = entity.getLastUpdateDate();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        UserDTO userDTO = (UserDTO) o;
+        return Objects.equals(id, userDTO.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id);
     }
 }
