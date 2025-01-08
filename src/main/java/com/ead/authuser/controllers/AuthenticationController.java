@@ -32,16 +32,4 @@ public class AuthenticationController {
         dto = service.insert(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(dto);
     }
-
-    @GetMapping(value = "/")
-    public String index() {
-
-        log.trace("TRACE");
-        log.debug("DEBUG");
-        log.info("INFO");
-        log.warn("WARN");
-        log.error("ERROR");
-
-        return "Logging Spring Boot...";
-    }
 }
