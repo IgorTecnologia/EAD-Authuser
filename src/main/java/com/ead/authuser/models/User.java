@@ -64,4 +64,23 @@ public class User implements Serializable {
 
     @Column(nullable = false)
     private LocalDateTime lastUpdateDate;
+
+    public User(){
+    }
+
+    public User(UUID id, String username, String email, String password, String fullName, UserStatus userStatus, UserType userType,
+                String phoneNumber, String cpf, String imageUrl, LocalDateTime creationDate, LocalDateTime lastUpdateDate) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.fullName = fullName;
+        this.userStatus = userStatus;
+        this.userType = userType;
+        this.phoneNumber = phoneNumber;
+        this.cpf = cpf;
+        this.imageUrl = imageUrl;
+        this.creationDate = creationDate;
+        this.lastUpdateDate = lastUpdateDate;
+    }
 }
