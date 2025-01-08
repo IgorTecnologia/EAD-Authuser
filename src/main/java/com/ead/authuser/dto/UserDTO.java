@@ -48,13 +48,11 @@ public class UserDTO extends RepresentationModel<UserDTO> {
     @Size(groups = {UserView.RegistrationPost.class, UserView.PasswordPut.class}, min = 7, max = 37, message = "Minimum character value allowed is 07 and the maximum is 37.")
     @NotBlank(groups = {UserView.RegistrationPost.class, UserView.PasswordPut.class}, message = "The password field is mandatory and blanks are not allowed.")
     @JsonView({UserView.RegistrationPost.class, UserView.PasswordPut.class})
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @Size(groups = UserView.PasswordPut.class, min = 7, max = 37, message = "Minimum character value allowed is 07 and the maximum is 37.")
     @NotBlank(groups = UserView.PasswordPut.class, message = "The old password field is mandatory and blanks are not allowed.")
     @JsonView(UserView.PasswordPut.class)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String oldPassword;
 
     @Size(min = 7, max = 57, message = "Minimum character value allowed is 07 and the maximum is 57.")
@@ -85,6 +83,33 @@ public class UserDTO extends RepresentationModel<UserDTO> {
     private LocalDateTime lastUpdateDate;
 
     public UserDTO(){
+    }
+
+    public UserDTO(String oldPassword, String password, LocalDateTime lastUpdateDate) {
+        this.oldPassword = oldPassword;
+        this.password = password;
+        this.lastUpdateDate = lastUpdateDate;
+    }
+
+    public UserDTO(String imageUrl, LocalDateTime lastUpdateDate) {
+        this.imageUrl = imageUrl;
+        this.lastUpdateDate = lastUpdateDate;
+    }
+
+    public UserDTO(UUID id, String username, String email, String password, String fullName, String phoneNumber,
+                   String cpf, String imageUrl, UserStatus userStatus, UserType userType, LocalDateTime creationDate, LocalDateTime lastUpdateDate) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.fullName = fullName;
+        this.phoneNumber = phoneNumber;
+        this.cpf = cpf;
+        this.imageUrl = imageUrl;
+        this.userStatus = userStatus;
+        this.userType = userType;
+        this.creationDate = creationDate;
+        this.lastUpdateDate = lastUpdateDate;
     }
 
     public UserDTO(User entity){
