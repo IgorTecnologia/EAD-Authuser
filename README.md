@@ -44,6 +44,7 @@ git clone https://github.com/IgorTecnologia/EAD-Authuser.git
 1. Start the application with Maven
 2. The API will be accessible at http://localhost:8087
 3. You must have a PostgreSQL server active on the machine.
+4. Attention!!! To carry out unit and integration tests of the application, the H2 database must be used.
 
 ## Collection Postman
 
