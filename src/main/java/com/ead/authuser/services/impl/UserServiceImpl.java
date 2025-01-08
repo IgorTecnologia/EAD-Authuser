@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
         repository.save(entity);
 
         log.debug("Insert User saved {} ", entity.toString());
-        log.info("User Saved successfully Id {}", entity.getId());
+        log.info("User Saved successfully Id: {}", entity.getId());
 
         return new UserDTO(entity);
     }
@@ -80,7 +80,7 @@ public class UserServiceImpl implements UserService {
         repository.save(entity);
 
         log.debug("Update User saved {} ", entity.toString());
-        log.info("User updated successfully Id {}", entity.getId());
+        log.info("User updated successfully Id: {}", entity.getId());
 
         return new UserDTO(entity);
 
@@ -103,7 +103,7 @@ public class UserServiceImpl implements UserService {
             repository.save(entity);
 
             log.debug("UpdatePassword password saved {}", entity.getPassword());
-            log.info("Password updated successfully Id {}", entity.getId());
+            log.info("Password updated successfully Id: {}", entity.getId());
         }
     }
 
@@ -129,15 +129,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(UUID id) {
 
-        log.debug("DeleteById id received {}", id);
+        log.debug("DeleteById id received: {}", id);
 
         Optional<User> obj = repository.findById(id);
         if(obj.isEmpty()){
             throw new ResourceNotFoundException("Id not found: " + id);
         }
         repository.deleteById(id);
-        log.debug("User deleted successfully id {}", id);
-        log.info("User deleted successfully id {}", id);
+        log.debug("User deleted successfully Id: {}", id);
+        log.info("User deleted successfully Id: {}", id);
     }
 
     void copyDtoToEntity(User entity, UserDTO dto){
