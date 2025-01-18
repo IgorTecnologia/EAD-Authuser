@@ -8,12 +8,12 @@ import com.ead.authuser.repositories.UserRepository;
 import com.ead.authuser.services.UserService;
 import com.ead.authuser.services.exceptions.BadRequestException;
 import com.ead.authuser.services.exceptions.ResourceNotFoundException;
-import com.ead.authuser.specification.SpecificationTemplate;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,8 +31,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(readOnly = true)
-    public Page<UserDTO> findAllPaged(SpecificationTemplate.UserSpec spec, Pageable pageable) {
-
+    public Page<UserDTO> findAllPaged(Specification<User> spec, Pageable pageable) {
         Page<User> page = repository.findAll(spec, pageable);
         return page.map(UserDTO::new);
     }
