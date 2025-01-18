@@ -3,7 +3,7 @@ server:
 
 Spring:
   profiles:
-    active: postgres
+    active: h2
   jpa:
     properties:
       hibernate:
