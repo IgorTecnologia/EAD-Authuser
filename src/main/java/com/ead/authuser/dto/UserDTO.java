@@ -45,6 +45,7 @@ public class UserDTO extends RepresentationModel<UserDTO> {
     @JsonView(UserView.RegistrationPost.class)
     private String email;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Size(groups = {UserView.RegistrationPost.class, UserView.PasswordPut.class}, min = 7, max = 37, message = "Minimum character value allowed is 07 and the maximum is 37.")
     @NotBlank(groups = {UserView.RegistrationPost.class, UserView.PasswordPut.class}, message = "The password field is mandatory and blanks are not allowed.")
     @JsonView({UserView.RegistrationPost.class, UserView.PasswordPut.class})
